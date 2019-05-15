@@ -1,5 +1,4 @@
-FROM docker:18.06-dind
+FROM gitlab/dind
 
-RUN apk update && apk upgrade && \
-	apk add --no-cache git bash python-dev py-pip && \
-	pip install docker-compose
+RUN apt-get update && apt-get install -y git bash && apt-get clean
+
